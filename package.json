@@ -1,5 +1,5 @@
 {
-  "name": "dtec-mini",
+  "name": "CYBER-PANDA-V.07",
   "version": "1.0.0",
   "description": "WhatsApp Multi Device Bot",
   "main": "index.js",
@@ -30,6 +30,6 @@
     "multi-device",
     "baileys"
   ],
-  "author": "AKINDU",
+  "author": "CYBER-PANDA-V.07",
   "license": "MIT"
 }
