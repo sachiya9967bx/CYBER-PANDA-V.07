@@ -1,0 +1,35 @@
+{
+  "name": "dtec-mini",
+  "version": "1.0.0",
+  "description": "WhatsApp Multi Device Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "github:Jeliostarr/DEV-Baileys",
+    "express": "^4.18.2",
+    "fs-extra": "^11.2.0",
+    "pino": "^8.17.0",
+    "jimp": "latest",
+    "@octokit/rest": "^20.0.2",
+    "cheerio": "1.0.0-rc.12",
+    "yt-search": "2.12.1",
+    "node-fetch": "2.6.7",
+    "file-type": "16.5.4",
+    "axios": "^1.6.0",
+    "moment-timezone": "^0.5.45",
+    "mongodb": "^5.7.0"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "multi-device",
+    "baileys"
+  ],
+  "author": "AKINDU",
+  "license": "MIT"
+}

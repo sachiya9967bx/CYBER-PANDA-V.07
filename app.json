@@ -1,0 +1,22 @@
+{
+    "name": "dtec-mini",
+    "description": "create by x team",
+    "logo": "image url",
+    "repository": "https://github.com/username/sesssion name",
+    "keywords": ["x-project"],
+    "success_url": "/", 
+    "buildpacks": [{ "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" } ],
+    "env": {      
+      "PORT": {
+        "description": "Port for web app.4000,5000,3000... any!",
+        "value": "5000",
+        "required": false 
+      },
+      "MESSAGE": {
+        "description": "DTEC",
+        "value": "",
+        "required": false 
+      }
+    }   
+
+}
