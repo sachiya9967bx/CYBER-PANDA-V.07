@@ -1,4 +1,4 @@
-const express = require('express');
+-const express = require('express');
 const fs = require('fs-extra');
 const path = require('path');
 const os = require('os');
@@ -27,7 +27,7 @@ const {
 
 // ---------------- CONFIG ----------------
 
-const BOT_NAME_FANCY = 'ᴅᴛᴇᴄ ᴍɪɴɪ';
+const BOT_NAME_FANCY = 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
 
 const config = {
   AUTO_VIEW_STATUS: 'true',
@@ -36,17 +36,17 @@ const config = {
   AUTO_LIKE_EMOJI: ['🔥','😀','👍','😃','😄','😁','😎','🥳','🌞','🌈','❤️'],
   PREFIX: '.',
   MAX_RETRIES: 3,
-  GROUP_INVITE_LINK: 'https://chat.whatsapp.com/LADTX98H0a56ixDmHV3FZo',
+  GROUP_INVITE_LINK: 'https://chat.whatsapp.com/KySCXYNAz90Im672wK8xyf?mode=gi_t',
   RCD_IMAGE_PATH: 'https://i.ibb.co/v67njtFL/Gemini-Generated-Image-ezfndeezfndeezfn.png',
   NEWSLETTER_JID: '120363419758690313@newsletter',
   OTP_EXPIRY: 300000,
-  OWNER_NUMBER: process.env.OWNER_NUMBER || '94764703165',
-  CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb7NcUw2phHR4mDZJ51g',
-  BOT_NAME: 'ᴅᴛᴇᴄ ᴍɪɴɪ',
-  BOT_VERSION: '1.0.0',
-  OWNER_NAME: 'ᴀᴋɪɴᴅᴜ ᴅɪᴍᴀɴꜱʜᴀ',
+  OWNER_NUMBER: process.env.OWNER_NUMBER || '94760220052',
+  CHANNEL_LINK: 'https://chat.whatsapp.com/KySCXYNAz90Im672wK8xyf?mode=gi_t',
+  BOT_NAME: 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ',
+  BOT_VERSION: 'V.07',
+  OWNER_NAME: 'ᴄʏʙᴇʀ x ꜱᴀᴄʜɪʏᴀ',
   IMAGE_PATH: 'https://i.ibb.co/v67njtFL/Gemini-Generated-Image-ezfndeezfndeezfn.png',
-  BOT_FOOTER: 'ᴅᴛᴇᴄ ᴍɪɴɪ',
+  BOT_FOOTER: 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ',
   BUTTON_IMAGES: { ALIVE: 'https://i.ibb.co/v67njtFL/Gemini-Generated-Image-ezfndeezfndeezfn.png' }
 };
 
@@ -572,7 +572,7 @@ if (!isOwner) {
     // 🔹 Load bot name dynamically
     const sanitized = (number || '').replace(/[^0-9]/g, '');
     let cfg = await loadUserConfigFromMongo(sanitized) || {};
-    let botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    let botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     // 🔹 Fake contact for quoting
     const shonux = {
@@ -1199,7 +1199,7 @@ case 'settings': {
     
     const settingsText = `
 ╭─── 〔 *ᴄᴜʀʀᴇɴᴛ ꜱᴇᴛᴛɪɴɢꜱ* 〕 ───╮
-│
+│ 🐼  ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ 🐼
 │ 🔧 *ᴡᴏʀᴋ ᴛʏᴘᴇ:* ${currentConfig.WORK_TYPE || 'ᴘᴜʙʟɪᴄ'}
 │ 🎭 *ᴘʀᴇꜱᴇɴᴄᴇ:* ${currentConfig.PRESENCE || 'ᴀᴠᴀɪʟᴀʙʟᴇ'}
 │ 👁️ *ᴀᴜᴛᴏ ꜱᴛᴀᴛᴜꜱ ꜱᴇᴇɴ:* ${currentConfig.AUTO_VIEW_STATUS || 'ᴛʀᴜᴇ'}
@@ -1413,7 +1413,7 @@ case 'topdf3': {
             document: { url: res.data.result },
             mimetype: 'application/pdf',
             fileName: `Converted_${Date.now()}.pdf`,
-            caption: `✅ *Image Converted to PDF*\n\n> 🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥`
+            caption: `✅ *Image Converted to PDF*\n\n>🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼`
         }, { quoted: msg });
 
         await socket.sendMessage(sender, { react: { text: '✅', key: msg.key } });
@@ -1435,7 +1435,7 @@ case 'gpt': {
     // Session and Bot Name Config
     const sanitized = (sender || '').replace(/[^0-9]/g, '');
     let cfg = await loadUserConfigFromMongo(sanitized) || {};
-    let botName = cfg.botName || 'ᴅᴛᴇᴄ ᴍɪɴɪ';
+    let botName = cfg.botName || 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
 
     // 🔹 Meta AI Fake Quote
     const metaQuote = {
@@ -1466,7 +1466,7 @@ case 'gpt': {
     // AI System Prompt
     const prompt = `
 ඔබ සැබෑ ගැහැනු ලමයෙකු මෙන් හැසිරිය යුතුය. ඉමෝජි පමනක් තිබේනම් ඔබද ඉමෝජි පමනක් යවන්න... 
-ඔයාගේ නම ${botName} , ඔයාගෙන් කවුරුහරි "ඔයාව හැදුවේ කවුද?" කියලා ඇහුවොත් විතරක් ඔයා කියන්නේ "මාව හැදුවේ චතුක අයියා" කියලා. User Message: ${q}
+ඔයාගේ නම ${botName} , ඔයාගෙන් කවුරුහරි "ඔයාව හැදුවේ කවුද?" කියලා ඇහුවොත් විතරක් ඔයා කියන්නේ "මාව හැදුවේ සචිත් අයියා" කියලා. User Message: ${q}
     `;
 
     const payload = { contents: [{ parts: [{ text: prompt }] }] };
@@ -1479,7 +1479,7 @@ case 'gpt': {
 
     if (!data?.candidates?.[0]?.content?.parts?.[0]?.text) {
       await socket.sendMessage(sender, { 
-        text: '*🚩 ᴀɪ ʀᴇᴘʟʏ ɴොᴛ ꜰොᴜɴᴅ.*',
+        text: '*🚩 ᴀɪ ʀᴇᴘʟʏ*',
         buttons: [{ buttonId: `${prefix}menu`, buttonText: { displayText: '📋 ᴍᴇɴᴜ' }, type: 1 }],
         quoted: metaQuote
       });
@@ -1520,7 +1520,7 @@ case 'gpt': {
     console.error("Error in AI chat:", err);
     try {
       await socket.sendMessage(sender, { 
-        text: '*❌ ɪɴᴛᴇʀɴᴀʟ ᴀɪ ᴇʀʀොʀ. ᴘʟᴇᴀꜱᴇ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ.*',
+        text: '*❌ ᴘʟᴇᴀꜱᴇ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ.*',
         buttons: [{ buttonId: `${config.PREFIX}menu`, buttonText: { displayText: '📋 ᴍᴇɴᴜ' }, type: 1 }]
       });
     } catch(e){}
@@ -1555,7 +1555,7 @@ case 'gpt': {
 
 *🔽 Pressure*: ${data.main.pressure} hPa
 
-> 🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥
+🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼
 `,
             cityNotFound: "🚫 *City not found!* \n🔍 Please check the spelling and try again.",
             error: "⚠️ *An error occurred!* \n🔄 Please try again later."
@@ -1614,7 +1614,7 @@ case 'aiimg2': {
         // 🔹 Load bot name dynamically
         const sanitized = (number || '').replace(/[^0-9]/g, '');
         let cfg = await loadUserConfigFromMongo(sanitized) || {};
-        let botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+        let botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
         // 🔹 Fake contact with dynamic bot name
         const shonux = {
@@ -1806,7 +1806,7 @@ case 'grouplink': {
    - Code expires in **60 seconds**.
    - Do not share this code.
    
-> 🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥`
+🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼`
         }, { quoted: msg });
 
         await sleep(2000);
@@ -1854,13 +1854,13 @@ case 'grouplink': {
         console.log('Sending message to user...');
         await socket.sendMessage(sender, {
             text: formatMessage(
-                '🏏 🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥 MINI CEICKET NEWS🏏',
+                '🏏 🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼 MINI CEICKET NEWS🏏',
                 `📢 *${title}*\n\n` +
                 `🏆 *mark*: ${score}\n` +
                 `🎯 *to win*: ${to_win}\n` +
                 `📈 *now speed*: ${crr}\n\n` +
                 `🌐 *link*: ${link}`,
-                '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥'
+                'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ'
             )
         });
         console.log('Message sent successfully.');
@@ -1879,7 +1879,7 @@ case 'translate': {
     // Load Config for Meta Look
     const sanitized = (sender || '').replace(/[^0-9]/g, '');
     const cfg = await loadUserConfigFromMongo(sanitized) || {};
-    const botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     const lang = args[0] || 'si';
     const text = args.slice(1).join(' ') || 
@@ -1934,7 +1934,7 @@ case 'calc': {
     // Load Config
     const sanitized = (sender || '').replace(/[^0-9]/g, '');
     const cfg = await loadUserConfigFromMongo(sanitized) || {};
-    const botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     const expr = args.join(' ');
     if (!expr) return await socket.sendMessage(sender, { text: '❌ *Usage:* .calc 2+2*5' });
@@ -2054,7 +2054,7 @@ case 'git': {
     // Load Config
     const sanitized = (sender || '').replace(/[^0-9]/g, '');
     const cfg = await loadUserConfigFromMongo(sanitized) || {};
-    const botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     try {
         const res = await axios.get(`https://api.github.com/users/${user}`);
@@ -2080,6 +2080,7 @@ case 'git': {
 │ 🔗 *Link:* ${d.html_url}
 │
 ╰─────────────────────╯
+*ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ*
 > ${botName}`;
 
         await socket.sendMessage(sender, { 
@@ -2144,9 +2145,9 @@ case 'git': {
         await socket.sendMessage(sender, {
             image: { url: thumbnailUrl },
             caption: formatMessage(
-                '📰 🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥 නවතම පුවත් 📰',
+                '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼\n\nනවතම පුවත්',
                 `📢 *${title}*\n\n${desc}\n\n🕒 *Date*: ${date || 'තවම ලබාදීලා නැත'}\n🌐 *Link*: ${link}`,
-                '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥'
+                'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ'
             )
         });
     } catch (error) {
@@ -2327,7 +2328,7 @@ case 'csong': {
 
 \`සින්දුවට රියැක්ට් ඕනි ළමයෝ...😽💗🍃\`
 
-> *${channelName}*`;
+*${channelName}*`;
 
         // 1. Send Image with Caption
         await socket.sendMessage(targetJid, { 
@@ -2367,7 +2368,7 @@ case 'csong': {
 
         // Notify Owner
         await socket.sendMessage(sender, { 
-            text: `*✅ Successfully Sent!*\n\n🎵 *Song:* ${title}\n📢 *Channel:* ${channelName}\n🆔 *JID:* ${targetJid}\n\n\`© Powered By ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ𝟷\`` 
+            text: `*✅ Successfully Sent!*\n\n🎵 *Song:* ${title}\n📢 *Channel:* ${channelName}\n🆔 *JID:* ${targetJid}\n\n\`© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ\`` 
         }, { quoted: msg });
 
     } catch (err) {
@@ -2395,7 +2396,7 @@ case 'fbd': {
         // 🔹 Load bot name dynamically
         const sanitized = (number || '').replace(/[^0-9]/g, '');
         let cfg = await loadUserConfigFromMongo(sanitized) || {};
-        let botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+        let botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
         // 🔹 Fake contact for Meta AI mention
         const shonux = {
@@ -2607,7 +2608,7 @@ case 'apk': {
         // ✅ Load bot name dynamically
         const sanitized = (number || '').replace(/[^0-9]/g, '');
         let cfg = await loadUserConfigFromMongo(sanitized) || {};
-        let botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+        let botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
         // ✅ Fake Meta contact message
         const shonux = {
@@ -2673,7 +2674,7 @@ END:VCARD`
         // Catch block Meta mention
         const sanitized = (number || '').replace(/[^0-9]/g, '');
         let cfg = await loadUserConfigFromMongo(sanitized) || {};
-        let botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+        let botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
         const shonux = {
             key: {
@@ -2710,7 +2711,7 @@ case 'xvdl': {
         // ✅ Load bot name dynamically
         const sanitized = (number || '').replace(/[^0-9]/g, '');
         let cfg = await loadUserConfigFromMongo(sanitized) || {};
-        let botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+        let botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
         // ✅ Fake Meta contact message
         const shonux = {
@@ -2887,7 +2888,7 @@ case 'alive': {
   try {
     const sanitized = (number || '').replace(/[^0-9]/g, '');
     const cfg = await loadUserConfigFromMongo(sanitized) || {};
-    const botName = cfg.botName || 'ᴅᴛᴇᴄ ᴍɪɴɪ';
+    const botName = cfg.botName || 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
     const prefix = cfg.PREFIX || config.PREFIX;
     const logo = cfg.logo || config.RCD_IMAGE_PATH;
 
@@ -2906,15 +2907,15 @@ case 'alive': {
     const text = `
 ✨ *${botName.toUpperCase()} ɪꜱ ᴏɴʟɪɴᴇ* ✨
 ━━━━━━━━━━━━━━━━━━━━━━━━
+🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼
 
-👤 *ᴏᴡɴᴇʀ*: ᴀᴋɪɴᴅᴜ
+👤 *ᴏᴡɴᴇʀ*: ᴄʏʙᴇʀ x ꜱᴀᴄʜɪʏᴀ
 ⏳ *ᴜᴘᴛɪᴍᴇ*: ${hours}ʜ ${minutes}ᴍ ${seconds}ꜱ
 ☁️ *ᴘʟᴀᴛꜰᴏʀᴍ*: ${process.env.PLATFORM || 'ʜᴇʀᴏᴋᴜ'}
 🔗 *ᴘʀᴇꜰɪx*: ${prefix}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴛᴇᴄ ᴍɪɴɪ*
-`.trim();
+*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ*`.trim();
 
     // ඔබ ඉල්ලා සිටි Button ව්‍යුහය
     const templateButtons = [
@@ -2957,7 +2958,7 @@ case 'ping': {
         // 2. Load Config
         const sanitized = (sender || '').replace(/[^0-9]/g, '');
         const cfg = await loadUserConfigFromMongo(sanitized) || {};
-        const botName = cfg.botName || 'ᴅᴛᴇᴄ ᴍɪɴɪ';
+        const botName = cfg.botName || 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
         const prefix = cfg.PREFIX || config.PREFIX;
         const logo = 'https://files.catbox.moe/ir37re.png'; // ᴘɪɴɢ ʟᴏɢᴏ
 
@@ -2986,6 +2987,7 @@ case 'ping': {
         const text = `
 ⚡ *${botName.toUpperCase()} ꜱᴘᴇᴇᴅ ᴛᴇꜱᴛ* ⚡
 ━━━━━━━━━━━━━━━━━━━━━━━━
+🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼
 
 📡 *ʟᴀᴛᴇɴᴄʏ*: ${ping}ᴍꜱ
 📶 *ꜱᴛᴀᴛᴜꜱ*: ${speedStatus}
@@ -2994,8 +2996,7 @@ case 'ping': {
 💻 *ʜᴏꜱᴛ*: ${os.hostname()}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴛᴇᴄ ᴍɪɴɪ*
-`.trim();
+*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ*`.trim();
 
         // 7. Template Buttons
         const templateButtons = [
@@ -3038,7 +3039,7 @@ case 'system': {
         // Config & Bot Name Load
         const sanitized = (sender || '').replace(/[^0-9]/g, '');
         const cfg = await loadUserConfigFromMongo(sanitized) || {};
-        const botName = cfg.botName || 'ᴅᴛᴇᴄ ᴍɪɴɪ';
+        const botName = cfg.botName || 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
         const prefix = cfg.PREFIX || config.PREFIX;
         const logo = 'https://files.catbox.moe/ir37re.png'; // ꜱʏꜱᴛᴇᴍ ʟᴏɢᴏ
         
@@ -3086,8 +3087,7 @@ case 'system': {
 ⌚ *ᴛɪᴍᴇ*: ${new Date().toLocaleTimeString()}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴛᴇᴄ ᴍɪɴɪ*
-`.trim();
+*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ*`.trim();
 
         // --- 3. Template Buttons ---
         const templateButtons = [
@@ -3127,7 +3127,7 @@ case 'bots': {
   try {
     const sanitized = (sender || '').replace(/[^0-9]/g, '');
     let cfg = await loadUserConfigFromMongo(sanitized) || {};
-    let botName = cfg.botName || 'ᴅᴛᴇᴄ ᴍɪɴɪ';
+    let botName = cfg.botName || 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
     const prefix = config.PREFIX;
     const logo = cfg.logo || 'https://files.catbox.moe/ir37re.png';
 
@@ -3176,7 +3176,7 @@ case 'bots': {
       text += `\n⚠️ ɴᴏ ᴀᴄᴛɪᴠᴇ ꜱᴇꜱꜱɪᴏɴꜱ ꜰᴏᴜɴᴅ.`;
     }
 
-    text += `\n\n🕒 *ᴄʜᴇᴄᴋᴇᴅ ᴀᴛ:* ${new Date().toLocaleString('en-GB', { timeZone: 'Asia/Colombo' })}\n\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴛᴇᴄ ᴍɪɴɪ*`;
+    text += `\n\n🕒 *ᴄʜᴇᴄᴋᴇᴅ ᴀᴛ:* ${new Date().toLocaleString('en-GB', { timeZone: 'Asia/Colombo' })}\n\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ*`;
 
     // 🔘 Template Buttons
     const templateButtons = [
@@ -3302,15 +3302,15 @@ END:VCARD`
         const quality = apiRes.results.download.quality || '128kbps';
         const filename = apiRes.results.download.filename || `CHAMODMD-${title}.mp3`;
         const caption = `
-🎵 𝐄𝐑𝐀 𝐌𝐃 𝐒𝐎𝐍𝐆 𝐃𝐎𝐖𝐍𝐋𝐎𝐃𝐄𝐑🎵
+🎵 𝐂𝐘𝐁𝐄𝐑 𝐏𝐀𝐍𝐃𝐀 𝐌𝐃 𝐒𝐎𝐍𝐆 𝐃𝐎𝐖𝐍𝐋𝐎𝐃𝐄𝐑🎵
 
-> 🎵 *Title ┆* ${title}
+🎵 *Title ┆* ${title}
 
-> ⏱️ *Duration ┆* ${duration || 'N/A'}
+⏱️ *Duration ┆* ${duration || 'N/A'}
 
-> 🔊 *Quality ┆* ${quality}
+🔊 *Quality ┆* ${quality}
 
-> 🔗 *Source ┆* ${videoUrl}
+🔗 *Source ┆* ${videoUrl}
 
 *💐 Reply Number Your Format*
 *╭━━━━━━━━━━━━━━━━━━➤*
@@ -3319,7 +3319,8 @@ END:VCARD`
 *┣━➤ 3️⃣. 🎙 MP3 as Voice Note*
 *╰━━━━━━━━━━━━━━━━━━➤*
 
-> 🧑‍💻 POWERED BY ${botName}`;
+🧑‍💻 POWERED BY ${botName}
+  ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ`;
         // send thumbnail card if available
         const sendOpts = { quoted: botMention };
         const media = thumb ? { image: { url: thumb }, caption } : { text: caption };
@@ -3502,9 +3503,9 @@ case 'video': {
                 {
                     image: { url: thumb },
                     caption:
-                        `*🎥 🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥 Video Downloader 💗*\n\n` +
+                        `*🎥 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ Video Downloader 💗*\n\n` +
                         `*📍 Title :* _${videoInfo.title || query}_\n\n` +
-                        `> Powered by 🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥`,
+                        `ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ`,
                 },
                 { quoted: msg }
             );
@@ -3541,7 +3542,7 @@ case 'video': {
                 mimetype: "video/mp4",
                 fileName: `${title}.mp4`,
                 caption:
-                    `🎬 *${title}*\n\n> Powered by 🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥`,
+                    `🎬 *${title}*\n\n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ`,
             },
             { quoted: msg }
         );
@@ -3610,30 +3611,28 @@ case 'menu': {
         message: {
             contactMessage: {
                 displayName: botName,
-                vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${botName};;;;\nFN:${botName}\nORG:ᴅᴛᴇᴄ ᴍɪɴɪ\nEND:VCARD`
+                vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${botName};;;;\nFN:${botName}\nORG:ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ\nEND:VCARD`
             }
         }
     };
 
     // 🖼️ Image/Logo Logic
-    const defaultImg = 'https://files.catbox.moe/ir37re.png';
+    const defaultImg = 'https://i.ibb.co/9kswTybP/IMG-20260208-162007-475-3.jpg';
     const useLogo = userCfg.logo || defaultImg;
 
     // ✨ MENU TEXT
     const text = `
-👋 ${greetings}
+😊 ${greetings}
 
-╭───❮ 🔮 *ᴅᴛᴇᴄ ᴅᴀꜱʜʙᴏᴀʀᴅ* 🔮 ❯───╮
+╭─❮ *🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼*
 │
-│ 👑 *ᴄʀᴇᴀᴛᴏʀ* ➠ ᴀᴋɪɴᴅᴜ
+│ 👑 *ᴄʀᴇᴀᴛᴏʀ* ➠ ꜱᴀᴄʜɪᴛʜ
 │ 🤖 *ʙᴏᴛ ɴᴀᴍᴇ* ➠ ${botName}
 │ ⌚ *ʀᴜɴᴛɪᴍᴇ* ➠ ${hours}ʜ ${minutes}ᴍ ${seconds}ꜱ
 │ ⚡ *ᴠᴇʀꜱɪᴏɴ* ➠ ${config.BOT_VERSION || '1.0.0'}
 │
-╰───────────────────────
-
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴛᴇᴄ ᴍɪɴɪ*
-`.trim();
+╰───────────────────
+*ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ*`.trim();
 
     // Quick Reply Buttons
     const templateButtons = [
@@ -3686,7 +3685,7 @@ case 'download': {
       }
     } catch(e){ userCfg = {}; }
 
-    const botName = userCfg.botName || 'ᴅᴛᴇᴄ ᴍɪɴɪ';
+    const botName = userCfg.botName || 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
     const prefix = config.PREFIX;
     
     // ⌚ Greeting Logic
@@ -3722,7 +3721,7 @@ case 'download': {
 │ ➜ ${prefix}gdrive
 ╰───────────────
 
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴛᴇᴄ ᴍɪɴɪ ꜱʏꜱᴛᴇම*
+*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ*
 `.trim();
 
     // Quick Reply Buttons (Type 1)
@@ -3732,7 +3731,7 @@ case 'download': {
         { buttonId: `${prefix}owner`, buttonText: { displayText: "👤 ᴏᴡɴᴇʀ" }, type: 1 }
     ];
 
-    const defaultImg = 'https://files.catbox.moe/ir37re.png';
+    const defaultImg = 'https://i.ibb.co/9kswTybP/IMG-20260208-162007-475-3.jpg';
     const useLogo = userCfg.logo || defaultImg;
 
     // 📤 Sending as Photo with Buttons
@@ -3777,7 +3776,7 @@ case 'creative': {
       }
     } catch(e){ userCfg = {}; }
 
-    const botName = userCfg.botName || 'ᴅᴛᴇᴄ ᴍɪɴɪ';
+    const botName = userCfg.botName || 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
     const prefix = config.PREFIX;
     
     // ⌚ Greeting Logic
@@ -3811,8 +3810,7 @@ case 'creative': {
 │ ➜ ${prefix}translate
 ╰───────────────
 
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴛᴇᴄ ᴍɪɴɪ*
-`.trim();
+*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ*`.trim();
 
     // Quick Reply Buttons (Type 1)
     const templateButtons = [
@@ -3821,7 +3819,7 @@ case 'creative': {
         { buttonId: `${prefix}owner`, buttonText: { displayText: "👤 ᴏᴡɴᴇʀ" }, type: 1 }
     ];
 
-    const defaultImg = 'https://files.catbox.moe/ir37re.png';
+    const defaultImg = 'https://i.ibb.co/9kswTybP/IMG-20260208-162007-475-3.jpg';
     const useLogo = userCfg.logo || defaultImg;
 
     // 📤 Sending as Photo with Buttons
@@ -3848,7 +3846,7 @@ case 'creative': {
 
   } catch (err) {
     console.error('creative command error:', err);
-    try { await socket.sendMessage(sender, { text: '❌ ꜰᴀɪʟᴇᴅ ᴛො ꜱʜොᴡ ᴄʀᴇᴀᴛɪᴠᴇ ᴍᴇɴᴜ.' }, { quoted: msg }); } catch(e){}
+    try { await socket.sendMessage(sender, { text: '❌ ꜰᴀɪʟᴇᴅ ᴄʀᴇᴀᴛɪᴠᴇ ᴍᴇɴᴜ.' }, { quoted: msg }); } catch(e){}
   }
   break;
 }
@@ -3866,7 +3864,7 @@ case 'tools': {
       }
     } catch(e){ userCfg = {}; }
 
-    const botName = userCfg.botName || 'ᴅᴛᴇᴄ ᴍɪɴɪ';
+    const botName = userCfg.botName || 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
     const prefix = config.PREFIX;
 
     const curHr = new Date().getHours();
@@ -3906,8 +3904,7 @@ case 'tools': {
 │ ➜ ${prefix}github
 ╰───────────────
 
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴛᴇᴄ ᴍɪɴɪ*
-`.trim();
+*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ*`.trim();
 
     // Quick Reply Buttons (Type 1)
     const templateButtons = [
@@ -3916,7 +3913,7 @@ case 'tools': {
         { buttonId: `${prefix}owner`, buttonText: { displayText: "👤 ᴏᴡɴᴇʀ" }, type: 1 }
     ];
 
-    const defaultImg = 'https://files.catbox.moe/ir37re.png';
+    const defaultImg = 'https://i.ibb.co/9kswTybP/IMG-20260208-162007-475-3.jpg';
     const useLogo = userCfg.logo || defaultImg;
 
     // 📤 Sending as Photo with Buttons
@@ -3961,7 +3958,7 @@ case 'ownermenu': {
       }
     } catch(e){ userCfg = {}; }
 
-    const botName = userCfg.botName || 'ᴅᴛᴇᴄ ᴍɪɴɪ';
+    const botName = userCfg.botName || 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
     const prefix = config.PREFIX;
 
     const curHr = new Date().getHours();
@@ -3996,8 +3993,7 @@ case 'ownermenu': {
 │ ➜ ${prefix}alive
 ╰───────────────
 
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴛᴇᴄ ᴍɪɴɪ*
-`.trim();
+*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ*`.trim();
 
     // Quick Reply Buttons (Type 1)
     const templateButtons = [
@@ -4006,7 +4002,7 @@ case 'ownermenu': {
         { buttonId: `${prefix}owner`, buttonText: { displayText: "👤 ᴏᴡɴᴇʀ" }, type: 1 }
     ];
 
-    const defaultImg = 'https://files.catbox.moe/m94645.jpg';
+    const defaultImg = 'https://i.ibb.co/9kswTybP/IMG-20260208-162007-475-3.jpg';
     const useLogo = userCfg.logo || defaultImg;
 
     // 📤 Sending as Photo with Buttons
@@ -4150,7 +4146,7 @@ case 'owner': {
     try {
         const sanitized = (sender || '').replace(/[^0-9]/g, '');
         const cfg = await loadUserConfigFromMongo(sanitized) || {};
-        const botName = cfg.botName || 'ᴅᴛᴇᴄ ᴍɪɴɪ';
+        const botName = cfg.botName || 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
         const prefix = config.PREFIX;
 
         // 🔹 Meta AI Quote Card (shonux)
@@ -4173,13 +4169,13 @@ case 'owner': {
         let vcard = 
             'BEGIN:VCARD\n' +
             'VERSION:3.0\n' +
-            'FN:ᴀᴋɪɴᴅᴜ ᴅɪᴍᴀɴꜱʜᴀ\n' + 
+            'FN:ꜱᴀᴄʜɪᴛʜ ᴄʜᴀɴᴅʀᴀ\n' + 
             'ORG:ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ;\n' + 
-            'TITLE:ꜰᴏᴜɴᴅᴇʀ & ᴄᴇᴏ ᴏꜰ ᴅᴛᴇᴄ ᴍɪɴɪ ʙᴏᴛ;\n' + 
-            'EMAIL;type=INTERNET:dimanshaakindu@gmail.com\n' + 
-            'ADR;type=WORK:;;ᴍᴀᴛᴀʀᴀ;;ꜱʀɪ ʟᴀɴᴋᴀ\n' + 
+            'TITLE:ꜰᴏᴜɴᴅᴇʀ & ᴄᴇᴏ ᴏꜰ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ\n' + 
+            'EMAIL;type=INTERNET:sachithchandra465@gmail.com\n' + 
+            'ADR;type=WORK:;;ʜᴀᴍʙᴀɴᴛʜᴏᴛᴀ;;ꜱʀɪ ʟᴀɴᴋᴀ\n' + 
             'URL:https://github.com\n' + 
-            'TEL;type=CELL;type=VOICE;waid=94764703166:+94 76 470 3165\n' + 
+            'TEL;type=CELL;type=VOICE;waid=94760220052:+94702782946\n' + 
             'END:VCARD';
 
         const text = `
@@ -4193,8 +4189,7 @@ case 'owner': {
 💬 *ꜰᴏʀ ꜱᴜᴘᴘᴏʀᴛ ᴏʀ ǫᴜᴇʀɪᴇꜱ, ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ ᴏᴡɴᴇʀ ᴅɪʀᴇᴄᴛʟʏ.*
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
-> *ᴘoᴡᴇʀᴇᴅ ʙʏ ᴅᴛᴇᴄ ᴍɪɴɪ*
-`.trim();
+*ᴘoᴡᴇʀᴇᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ*`.trim();
 
         const templateButtons = [
             { buttonId: `${prefix}menu`, buttonText: { displayText: "📋 ᴍᴀɪɴ ᴍᴇɴᴜ" }, type: 1 },
@@ -4212,7 +4207,7 @@ case 'owner': {
 
         // 2. Sending the Image Message with Buttons
         await socket.sendMessage(sender, {
-            image: { url: 'https://files.catbox.moe/m94645.jpg' },
+            image: { url: 'https://i.ibb.co/9kswTybP/IMG-20260208-162007-475-3.jpg' },
             caption: text,
             buttons: templateButtons,
             headerType: 4,
@@ -4222,7 +4217,7 @@ case 'owner': {
                     title: botName,
                     body: "ᴏᴡɴᴇʀ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ",
                     mediaType: 1,
-                    thumbnailUrl: 'https://files.catbox.moe/m94645.jpg',
+                    thumbnailUrl: 'https://i.ibb.co/9kswTybP/IMG-20260208-162007-475-3.jpg',
                     renderLargerThumbnail: true
                 }
             }
@@ -4372,7 +4367,7 @@ case 'upload': {
 
 🚀 *Url:* ${mediaUrl}
 
-_© ᴘᴏᴡᴇʀᴅ ʙʏ ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ𝟷_`;
+_© ᴘᴏᴡᴇʀᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ ʙᴏᴛ_`;
 
         await socket.sendMessage(sender, { 
             text: txt,
@@ -4442,7 +4437,7 @@ case 'topdf': {
 ✅ *Status:* Conversion Successful!
 📉 *Size:* ${(pdfBuffer.length / 1024).toFixed(2)} KB
 
-_© ᴘᴏᴡᴇʀᴅ ʙʏ ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ𝟷_`;
+_© ᴘᴏᴡᴇʀᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ_`;
 
         // Send PDF Document
         await socket.sendMessage(sender, {
@@ -4503,7 +4498,7 @@ END:VCARD` } }
         const buttonMessage = {
             image: { url: randomImage },
             caption: `🖼️ *Image Search:* ${q}\n\n_Provided by ${botName}_`,
-            footer: config.FOOTER || '> 🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥',
+            footer: config.FOOTER || '> 🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼',
             buttons: buttons,
              headerType: 4,
             contextInfo: { mentionedJid: [sender] }
@@ -4695,7 +4690,7 @@ END:VCARD` } }
   if (!jid) {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_UNFOLLOW" },
@@ -4712,7 +4707,7 @@ END:VCARD` } }
   if (!(isOwner || isAdmin)) {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_UNFOLLOW2" },
         message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -4723,7 +4718,7 @@ END:VCARD` } }
   if (!jid.endsWith('@newsletter')) {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_UNFOLLOW3" },
         message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -4739,7 +4734,7 @@ END:VCARD` } }
 
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_UNFOLLOW4" },
         message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -4750,7 +4745,7 @@ END:VCARD` } }
     console.error('unfollow error', e);
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_UNFOLLOW5" },
         message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -4766,7 +4761,7 @@ case 'tiktokdl': {
     try {
         const sanitized = (sender || '').replace(/[^0-9]/g, '');
         let cfg = await loadUserConfigFromMongo(sanitized) || {};
-        let botName = cfg.botName || 'ᴅᴛᴇᴄ ᴍɪɴɪ';
+        let botName = cfg.botName || 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
         const prefix = config.PREFIX;
 
         // 🔹 Meta AI Fake Quote
@@ -4817,8 +4812,7 @@ case 'tiktokdl': {
 📖 *ᴛɪᴛʟᴇ*: ${title || 'ɴᴏ ᴛɪᴛʟᴇ'}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
-> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴛᴇᴄ ᴍɪɴɪ*
-`.trim();
+*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ*`.trim();
 
         // 📤 Sending Video (Buttons remove කර ඇත)
         await socket.sendMessage(sender, {
@@ -5232,7 +5226,7 @@ case 'font': {
     // ?? Load bot name dynamically
     const sanitized = (number || '').replace(/[^0-9]/g, '');
     let cfg = await loadUserConfigFromMongo(sanitized) || {};
-    let botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    let botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     // 🔹 Fake contact for Meta AI mention
     const botMention = {
@@ -5310,7 +5304,7 @@ case 'mfdl': {
         // ✅ Load bot name dynamically
         const sanitized = (number || '').replace(/[^0-9]/g, '');
         let cfg = await loadUserConfigFromMongo(sanitized) || {};
-        let botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+        let botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
         // ✅ Fake Meta contact message (like Facebook style)
         const shonux = {
@@ -5380,7 +5374,7 @@ END:VCARD`
         // ✅ In catch also send Meta mention style
         const sanitized = (number || '').replace(/[^0-9]/g, '');
         let cfg = await loadUserConfigFromMongo(sanitized) || {};
-        let botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+        let botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
         const shonux = {
             key: {
@@ -5417,7 +5411,7 @@ case 'apkfind': {
         // ✅ Load bot name dynamically
         const sanitized = (number || '').replace(/[^0-9]/g, '');
         let cfg = await loadUserConfigFromMongo(sanitized) || {};
-        let botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+        let botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
         // ✅ Fake Meta contact message
         const shonux = {
@@ -5482,7 +5476,7 @@ END:VCARD`
 
         const sanitized = (number || '').replace(/[^0-9]/g, '');
         let cfg = await loadUserConfigFromMongo(sanitized) || {};
-        let botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+        let botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
         const shonux = {
             key: {
@@ -5592,7 +5586,7 @@ case 'newslist': {
     if (!docs || docs.length === 0) {
       let userCfg = {};
       try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-      const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+      const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
       const shonux = {
           key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_NEWSLIST" },
           message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -5607,7 +5601,7 @@ case 'newslist': {
 
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_NEWSLIST2" },
         message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -5618,7 +5612,7 @@ case 'newslist': {
     console.error('newslist error', e);
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_NEWSLIST3" },
         message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -5637,7 +5631,7 @@ case 'cid': {
     // ✅ Dynamic botName load
     const sanitized = (number || '').replace(/[^0-9]/g, '');
     let cfg = await loadUserConfigFromMongo(sanitized) || {};
-    let botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    let botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     // ✅ Fake Meta AI vCard (for quoted msg)
     const shonux = {
@@ -5736,7 +5730,7 @@ case 'addadmin': {
   if (!args || args.length === 0) {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_ADDADMIN" },
@@ -5750,7 +5744,7 @@ case 'addadmin': {
   if (!isOwner) {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_ADDADMIN2" },
@@ -5765,7 +5759,7 @@ case 'addadmin': {
 
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_ADDADMIN3" },
@@ -5777,7 +5771,7 @@ case 'addadmin': {
     console.error('addadmin error', e);
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
     const shonux = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_ADDADMIN4" },
         message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -5872,7 +5866,7 @@ case 'hidetag': {
         // 5. Load Config for Fake Card
         const sanitized = (sender || '').replace(/[^0-9]/g, '');
         const cfg = await loadUserConfigFromMongo(sanitized) || {};
-        const botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+        const botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
         // Fake Meta Quote Card
         const metaQuote = {
@@ -5942,7 +5936,7 @@ case 'instagram': {
     // 🔹 Load session bot name
     const sanitized = (number || '').replace(/[^0-9]/g, '');
     let cfg = await loadUserConfigFromMongo(sanitized) || {};
-    let botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    let botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     // 🔹 Meta style fake contact
     const shonux = {
@@ -6111,7 +6105,7 @@ case 'deladmin': {
   if (!args || args.length === 0) {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     const shonux = {
       key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_DELADMIN1" },
@@ -6125,7 +6119,7 @@ case 'deladmin': {
   if (!isOwner) {
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     const shonux = {
       key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_DELADMIN2" },
@@ -6140,7 +6134,7 @@ case 'deladmin': {
 
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     const shonux = {
       key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_DELADMIN3" },
@@ -6152,7 +6146,7 @@ case 'deladmin': {
     console.error('deladmin error', e);
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
     const shonux = {
       key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_DELADMIN4" },
       message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -6168,7 +6162,7 @@ case 'admins': {
     const list = await loadAdminsFromMongo();
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
 
     const shonux = {
       key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_ADMINS" },
@@ -6187,7 +6181,7 @@ case 'admins': {
     console.error('admins error', e);
     let userCfg = {};
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; } catch(e){ userCfg = {}; }
-    const title = userCfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥';
+    const title = userCfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼';
     const shonux = {
       key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_FAKE_ID_ADMINS2" },
       message: { contactMessage: { displayName: title, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${title};;;;\nFN:${title}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
@@ -6259,7 +6253,7 @@ case 'setlogo': {
 case 'jid': {
     const sanitized = (number || '').replace(/[^0-9]/g, '');
     const cfg = await loadUserConfigFromMongo(sanitized) || {};
-    const botName = cfg.botName || '🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥'; // dynamic bot name
+    const botName = cfg.botName || '🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼'; // dynamic bot name
 
     const userNumber = sender.split('@')[0]; 
 
@@ -6355,7 +6349,7 @@ case 'unblock': {
     // allow if caller is global owner OR this session's owner
     if (callerNumberClean !== ownerNumberClean && callerNumberClean !== sessionOwner) {
       try { await socket.sendMessage(sender, { react: { text: "❌", key: msg.key } }); } catch(e){}
-      await socket.sendMessage(sender, { text: '❌ ඔබට මෙය භාවිත කිරීමට අවසර නැත. (Owner හෝ මෙහි session owner විය යුතුයි)' }, { quoted: msg });
+      await socket.sendMessage(sender, { text: '❌ *ඔබට මෙය භාවිත කිරීමට අවසර නැත. (Owner හෝ මෙහි session owner විය යුතුයි)*' }, { quoted: msg });
       break;
     }
 
@@ -6376,7 +6370,7 @@ case 'unblock': {
 
     if (!targetJid) {
       try { await socket.sendMessage(sender, { react: { text: "❌", key: msg.key } }); } catch(e){}
-      await socket.sendMessage(sender, { text: '❗ කරුණාකර reply කරන හෝ mention කරන හෝ number එක යොදන්න. උදාහරණය: .unblock 9477xxxxxxx' }, { quoted: msg });
+      await socket.sendMessage(sender, { text: '❗ *කරුණාකර reply කරන හෝ mention කරන හෝ number එක යොදන්න. උදාහරණය: .unblock 9477xxxxxxx*' }, { quoted: msg });
       break;
     }
 
@@ -6426,7 +6420,7 @@ case 'setbotname': {
       key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_SETBOTNAME2" },
       message: { contactMessage: { displayName: BOT_NAME_FANCY, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${BOT_NAME_FANCY};;;;\nFN:${BOT_NAME_FANCY}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
     };
-    return await socket.sendMessage(sender, { text: '❗ Provide bot name. Example: `.setbotname 🐦‍🔥 ᴅᴛᴇᴄ ᴍɪɴɪ ᴠ1 🐦‍🔥 - 01`' }, { quoted: shonux });
+    return await socket.sendMessage(sender, { text: '❗ Provide bot name. Example: `.setbotname 🐼 ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ 🐼 - 01`' }, { quoted: shonux });
   }
 
   try {
@@ -6651,7 +6645,7 @@ async function deleteSessionAndCleanup(number, socketInstance) {
     try { await removeNumberFromMongo(sanitized); } catch(e){}
     try {
       const ownerJid = `${config.OWNER_NUMBER.replace(/[^0-9]/g,'')}@s.whatsapp.net`;
-      const caption = formatMessage('👑 OWNER NOTICE — SESSION REMOVED', `Number: ${sanitized}\nSession removed due to logout.\n\nActive sessions now: ${activeSockets.size}`, BOT_NAME_FANCY);
+      const caption = formatMessage('🐼 OWNER NOTICE — SESSION REMOVED', `Number: ${sanitized}\nSession removed due to logout.\n\nActive sessions now: ${activeSockets.size}`, BOT_NAME_FANCY);
       if (socketInstance && socketInstance.sendMessage) await socketInstance.sendMessage(ownerJid, { image: { url: config.RCD_IMAGE_PATH }, caption });
     } catch(e){}
     console.log(`Cleanup completed for ${sanitized}`);
