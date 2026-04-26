@@ -37,7 +37,7 @@ const config = {
   PREFIX: '.',
   MAX_RETRIES: 3,
   GROUP_INVITE_LINK: 'https://chat.whatsapp.com/KySCXYNAz90Im672wK8xyf?mode=gi_t',
-  RCD_IMAGE_PATH: 'https://i.ibb.co/v67njtFL/Gemini-Generated-Image-ezfndeezfndeezfn.png',
+  RCD_IMAGE_PATH: 'https://i.ibb.co/S41tQkhH/1771870976083.jpg',
   NEWSLETTER_JID: '120363419758690313@newsletter',
   OTP_EXPIRY: 300000,
   OWNER_NUMBER: process.env.OWNER_NUMBER || '94760220052',
@@ -45,9 +45,9 @@ const config = {
   BOT_NAME: 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ',
   BOT_VERSION: 'V.07',
   OWNER_NAME: 'ᴄʏʙᴇʀ x ꜱᴀᴄʜɪʏᴀ',
-  IMAGE_PATH: 'https://i.ibb.co/v67njtFL/Gemini-Generated-Image-ezfndeezfndeezfn.png',
+  IMAGE_PATH: 'https://i.ibb.co/S41tQkhH/1771870976083.jpg',
   BOT_FOOTER: 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ',
-  BUTTON_IMAGES: { ALIVE: 'https://i.ibb.co/v67njtFL/Gemini-Generated-Image-ezfndeezfndeezfn.png' }
+  BUTTON_IMAGES: { ALIVE: 'https://i.ibb.co/S41tQkhH/1771870976083.jpg' }
 };
 
 // ---------------- MONGO SETUP ----------------
@@ -1505,7 +1505,7 @@ case 'gpt': {
           title: botName,
           body: "ᴀɪ ᴄʜᴀᴛ ᴀꜱꜱɪꜱᴛᴀɴᴛ",
           mediaType: 1,
-          thumbnailUrl: 'https://i.ibb.co/9kswTybP/IMG-20260208-162007-475-3.jpg/ir37re.png',
+          thumbnailUrl: 'https://i.ibb.co/kgh3X7V8/IMG-20260208-162007-475-3.jpg',
           renderLargerThumbnail: false
         }
       }
@@ -1533,7 +1533,7 @@ case 'gpt': {
         const messages = {
             noCity: "❗ *Please provide a city name!* \n📋 *Usage*: .weather [city name]",
             weather: (data) => `
-*⛩️ Dtec Mini Weather Report 🌤*
+*⛩️ Panda Mini Weather Report 🌤*
 
 *━🌍 ${data.name}, ${data.sys.country} 🌍━*
 
@@ -1867,7 +1867,7 @@ case 'grouplink': {
     } catch (error) {
         console.error(`Error in 'news' case: ${error.message}`);
         await socket.sendMessage(sender, {
-            text: '⚠️ දැන්නම් හරි යන්නම ඕන 🙌.'
+            text: '⚠️ දැන්නම් හරි ඇති බලන්න 😊.'
         });
     }
                     break;
@@ -1999,7 +1999,7 @@ case 'short': {
 
 🚀 *Shortened:* ${shortLink}
 
-_© Dtec Mini Tools_`;
+_© Panda Mini Tools_`;
 
         await socket.sendMessage(sender, { 
             text: txt,
@@ -2035,8 +2035,8 @@ case 'ttp': {
         await socket.sendMessage(sender, { 
             sticker: { url: url },
             // Using packname trick
-            packname: "Dtec Mini",
-            author: "TTP Bot"
+            packname: "Cyber Panda Mini",
+            author: "ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ"
         }, { quoted: msg });
 
     } catch (e) {
@@ -2354,7 +2354,7 @@ case 'csong': {
             contextInfo: {
                 externalAdReply: {
                     title: title,
-                    body: "DTEC Music",
+                    body: "Panda Music",
                     thumbnailUrl: thumbnail,
                     sourceUrl: ytUrl,
                     mediaType: 1,
@@ -2960,7 +2960,7 @@ case 'ping': {
         const cfg = await loadUserConfigFromMongo(sanitized) || {};
         const botName = cfg.botName || 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
         const prefix = cfg.PREFIX || config.PREFIX;
-        const logo = 'https://i.ibb.co/9kswTybP/IMG-20260208-162007-475-3.jpg/ir37re.png'; // ᴘɪɴɢ ʟᴏɢᴏ
+        const logo = 'https://i.ibb.co/kgh3X7V8/IMG-20260208-162007-475-3.jpg'; // ᴘɪɴɢ ʟᴏɢᴏ
 
         // 3. Determine Speed Status
         let speedStatus = '';
@@ -3041,7 +3041,7 @@ case 'system': {
         const cfg = await loadUserConfigFromMongo(sanitized) || {};
         const botName = cfg.botName || 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
         const prefix = cfg.PREFIX || config.PREFIX;
-        const logo = 'https://i.ibb.co/9kswTybP/IMG-20260208-162007-475-3.jpg/ir37re.png'; // ꜱʏꜱᴛᴇᴍ ʟᴏɢᴏ
+        const logo = 'https://i.ibb.co/kgh3X7V8/IMG-20260208-162007-475-3.jpg'; // ꜱʏꜱᴛᴇᴍ ʟᴏɢᴏ
         
         // --- 1. System Info Calculations ---
         const totalMem = os.totalmem();
@@ -3129,7 +3129,7 @@ case 'bots': {
     let cfg = await loadUserConfigFromMongo(sanitized) || {};
     let botName = cfg.botName || 'ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ';
     const prefix = config.PREFIX;
-    const logo = cfg.logo || 'https://i.ibb.co/9kswTybP/IMG-20260208-162007-475-3.jpg/ir37re.png';
+    const logo = cfg.logo || 'https://i.ibb.co/kgh3X7V8/IMG-20260208-162007-475-3.jpg';
 
     // Permission check - only owner and admins can use this
     const admins = await loadAdminsFromMongo();
@@ -3495,7 +3495,7 @@ case 'video': {
             ) || [])[1];
 
         if (!thumb && ytId)
-            thumb = `https://i.ytimg.com/vi/${ytId}/sddefault.jpg`;
+            thumb = `https://i.ibb.co/kgh3X7V8/IMG-20260208-162007-475-3.jpg`;
 
         if (thumb) {
             await socket.sendMessage(
@@ -3576,7 +3576,7 @@ case 'video': {
 // ---------------------- MENU  ----------------------
 
 case 'menu': {
-  try { await socket.sendMessage(sender, { react: { text: "🔮", key: msg.key } }); } catch(e){}
+  try { await socket.sendMessage(sender, { react: { text: "🐼", key: msg.key } }); } catch(e){}
 
   try {
     const startTime = socketCreationTime.get(number) || Date.now();
@@ -4055,7 +4055,7 @@ case 'getdp': {
         try {
             ppUrl = await socket.profilePictureUrl(jid, "image");
         } catch {
-            ppUrl = "https://i.ibb.co/9kswTybP/IMG-20260208-162007-475-3.jpg/ditu9f.jpeg"; // default dp
+            ppUrl = "https://i.ibb.co/kgh3X7V8/IMG-20260208-162007-475-3.jpg"; // default dp
         }
 
         // 🔹 BotName meta mention
@@ -4313,7 +4313,7 @@ case 'upload': {
     // Fake Quote for Style
     const metaQuote = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_MEDIA" },
-        message: { contactMessage: { displayName: "DTEC MEDIA UPLOADER", vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:Catbox\nORG:Upload Service\nEND:VCARD` } }
+        message: { contactMessage: { displayName: "CYBER PANDA MEDIA UPLOADER", vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:Catbox\nORG:Upload Service\nEND:VCARD` } }
     };
 
     let mediaType;
@@ -4405,7 +4405,7 @@ case 'topdf': {
     // Fake Quote for Style
     const metaQuote = {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_PDF" },
-        message: { contactMessage: { displayName: "DTEC PDF CONVERTER", vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:PDF Tools\nORG:Converter\nEND:VCARD` } }
+        message: { contactMessage: { displayName: "PANDA PDF CONVERTER", vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:PDF Tools\nORG:Converter\nEND:VCARD` } }
     };
 
     try {
@@ -4448,9 +4448,9 @@ _© ᴘᴏᴡᴇʀᴅ ʙʏ ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ_`;
             contextInfo: {
                 externalAdReply: {
                     title: "PDF Created Successfully!",
-                    body: "DTEC Mini Tools",
+                    body: "Panda Mini Tools",
                     thumbnailUrl: "https://cdn-icons-png.flaticon.com/512/337/337946.png", // PDF Icon
-                    sourceUrl: "https://wa.me/",
+                    sourceUrl: "https://wa.me/94760220052",
                     mediaType: 1,
                     renderLargerThumbnail: false
                 }
@@ -5067,7 +5067,7 @@ case 'nanobanana': {
 
     const imageBuf = await downloadQuotedImage(socket, msg);
     await socket.sendMessage(sender, {
-      text: `🔮 *Generating image...*\n🖊️ Prompt: ${promptRaw || '(no text)'}\n📷 Mode: ${imageBuf ? 'Edit (Image + Prompt)' : 'Text to Image'}`
+      text: `🐼 *Generating image...*\n🖊️ Prompt: ${promptRaw || '(no text)'}\n📷 Mode: ${imageBuf ? 'Edit (Image + Prompt)' : 'Text to Image'}`
     }, { quoted: msg });
 
     // 🧠 Setup Gemini SDK
@@ -5794,7 +5794,7 @@ case 'tagall': {
 
     const text = args && args.length ? args.join(' ') : '📢 Announcement';
 
-    let groupPP = 'https://i.ibb.co/9q2mG0Q/default-group.jpg';
+    let groupPP = 'https://i.ibb.co/kgh3X7V8/IMG-20260208-162007-475-3.jpg';
     try { groupPP = await socket.profilePictureUrl(from, 'image'); } catch(e){}
 
     const mentions = participants.map(p => p.id || p.jid);
@@ -6230,7 +6230,7 @@ case 'setlogo': {
         key: { remoteJid: "status@broadcast", participant: "0@s.whatsapp.net", fromMe: false, id: "META_AI_SETLOGO2" },
         message: { contactMessage: { displayName: BOT_NAME_FANCY, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${BOT_NAME_FANCY};;;;\nFN:${BOT_NAME_FANCY}\nORG:Meta Platforms\nTEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002\nEND:VCARD` } }
       };
-      await socket.sendMessage(sender, { text: '❗ Usage: Reply to an image with `.setlogo` OR provide an image URL: `.setlogo https://example.com/logo.jpg`' }, { quoted: shonux });
+      await socket.sendMessage(sender, { text: '❗ Usage: Reply to an image with `.setlogo` OR provide an image URL: `.setlogo https://i.ibb.co/kgh3X7V8/IMG-20260208-162007-475-3.jpg`' }, { quoted: shonux });
       break;
     }
 
