@@ -3218,107 +3218,172 @@ case 'bots': {
   }
   break;
 }
-module.exports = {
-    command: ['song', 'play', 'lyrics', 'music', 'ytmp3', 'ytmp4', 'video'],
-    async execute(ctx) {
-        const { text, reply, commandName } = ctx;
-
-        if (commandName === 'song' || commandName === 'play') {
-            if (!text) {
-                return reply('*⚠️ Which song, mate?*\n\nExample: .song Red Right Hand');
-            }
-
-            return reply(`
-╔════════════════════════
-║ ⚡ M U S I C  S E A R C H ⚡ 
-╚════════════════════════
-
-🎵 *Searching for:* ${text}
-
-🎧 YouTube: https://www.youtube.com/results?search_query=${encodeURIComponent(text)}
-🎶 Spotify: https://open.spotify.com/search/${encodeURIComponent(text)}`);
-        }
-
-        if (commandName === 'lyrics') {
-            if (!text) {
-                return reply('*⚠️ Song name required, mate!*\n\nExample: .lyrics Red Right Hand');
-            }
-
-            return reply(`╔════════════════════════════════════════════╗
-║          ⚡ S O N G  L Y R I C S ⚡    ║
-╚════════════════════════════════════════════╝
-
-📝 *Song:* ${text}
-
-Get lyrics at: https://www.google.com/search?q=${encodeURIComponent(text + ' lyrics')}
-
-*"Words carry power, even in songs."* 🎤
-
-╔════════════════════════════════════════════╗`);
-        }
-
-        if (commandName === 'ytmp3') {
-            if (!text) {
-                return reply('*⚠️ YouTube URL required!*\n\nExample: .ytmp3 <url>');
-            }
-
-            return reply(`╔════════════════════════════════════════════╗
-║        ⚡ A U D I O  D O W N L O A D ⚡  ║
-╚════════════════════════════════════════════╝
-
-🎵 *Converting to MP3...*
-
-*Link:* ${text}
-
-Use online converters:
-• https://ytmp3.cc
-• https://y2mate.com
-
-*"Extract the essence, leave the rest."* 🎧
-
-╔════════════════════════════════════════════╗`);
-        }
-
-        if (commandName === 'ytmp4' || commandName === 'video') {
-            if (!text) {
-                return reply('*⚠️ YouTube URL required!*\n\nExample: .ytmp4 <url>');
-            }
-
-            return reply(`╔════════════════════════════════════════════╗
-║        ⚡ V I D E O  D O W N L O A D ⚡  ║
-╚════════════════════════════════════════════╝
-
-📹 *Converting to MP4...*
-
-*Link:* ${text}
-
-Use online converters:
-• https://y2mate.com
-• https://ssyoutube.com
-
-*"Capture the moment, preserve the memory."* 🎬
-
-╔════════════════════════════════════════════╗`);
-        }
-
-        if (commandName === 'music') {
-            return reply(`╔════════════════════════════════════════════╗
-║        ⚡ M U S I C  C O M M A N D S ⚡  ║
-╚════════════════════════════════════════════╝
-
-🎵 *Available Music Commands:*
-
-.song <name>    - Search for a song
-.play <name>    - Same as .song
-.lyrics <song>  - Get song lyrics
-.ytmp3 <url>    - Download audio
-.ytmp4 <url>    - Download video
-
-*"Music is the soundtrack of power."* 🎧
-
-╔════════════════════════════════════════════╗`);
-        }
+case 'song': {
+    const axios = require('axios');
+    // Extract YT video id & normalize link (reuse from original)
+    function extractYouTubeId(url) {
+        const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+        const match = url.match(regex);
+        return match ? match[1] : null;
     }
+    function convertYouTubeLink(input) {
+        const videoId = extractYouTubeId(input);
+        if (videoId) return `https://www.youtube.com/watch?v=${videoId}`;
+        return input;
+    }
+    // get message text
+    const q = msg.message?.conversation ||
+        msg.message?.extendedTextMessage?.text ||
+        msg.message?.imageMessage?.caption ||
+        msg.message?.videoMessage?.caption || '';
+    if (!q || q.trim() === '') {
+        await socket.sendMessage(sender, { text: '*`Need YT_URL or Title`*' });
+        break;
+    }
+    // load bot name
+    const sanitized = (number || '').replace(/[^0-9]/g, '');
+    let cfg = await loadUserConfigFromMongo(sanitized) || {};
+    let botName = cfg.botName || 'QUEEN ANU MINI';
+    // fake contact for quoted card
+    const botMention = {
+        key: {
+            remoteJid: "status@broadcast",
+            participant: "0@s.whatsapp.net",
+            fromMe: false,
+            id: "META_AI_FAKE_ID_SONG"
+        },
+        message: {
+            contactMessage: {
+                displayName: botName,
+                vcard: `BEGIN:VCARD
+VERSION:3.0
+N:${botName};;;;
+FN:${botName}
+ORG:Meta Platforms
+TEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002
+END:VCARD`
+            }
+        }
+    };
+    try {
+        // Determine video URL: if q contains YT id/url, use it; otherwise search by title
+        let videoUrl = null;
+        const maybeLink = convertYouTubeLink(q.trim());
+        if (extractYouTubeId(q.trim())) {
+            videoUrl = maybeLink;
+        } else {
+            // search by title using new API
+            const searchUrl = `https:///movanest.xyz/v2/ytsearch?query=${encodeURIComponent(q.trim())}`;
+            const searchRes = await axios.get(searchUrl, { timeout: 15000 }).then(r => r.data).catch(e => null);
+            if (!searchRes || !searchRes.status) {
+                await socket.sendMessage(sender, { text: '*`Search API error or no response`*' }, { quoted: botMention });
+                break;
+            }
+            const videos = (searchRes.results || []).filter(r => r.type === 'video');
+            const first = videos[0];
+            if (!first) {
+                await socket.sendMessage(sender, { text: '*`No video results found for that title`*' }, { quoted: botMention });
+                break;
+            }
+            videoUrl = first.url;
+        }
+        // call new mp3 API
+        const apiUrl = `https://www.movanest.xyz/v2/ytdl2?input==${encodeURIComponent(q)}=audio&bitrate=128`;
+        const apiRes = await axios.get(apiUrl, { timeout: 15000 }).then(r => r.data).catch(e => null);
+        if (!apiRes || !apiRes.status || !apiRes.results?.download?.url) {
+            await socket.sendMessage(sender, { text: '*`MP3 API returned no download link`*' }, { quoted: botMention });
+            break;
+        }
+        // Normalize download URL and metadata
+        const downloadUrl = apiRes.results.download.url;
+        const title = apiRes.results.metadata.title || 'Unknown title';
+        const thumb = apiRes.results.metadata.thumbnail || null;
+        const duration = apiRes.results.metadata.timestamp || null;
+        const quality = apiRes.results.download.quality || '128kbps';
+        const filename = apiRes.results.download.filename || `CHAMODMD-${title}.mp3`;
+        const caption = `
+🎵 𝐂𝐘𝐁𝐄𝐑 𝐏𝐀𝐍𝐃𝐀 𝐌𝐃 𝐒𝐎𝐍𝐆 𝐃𝐎𝐖𝐍𝐋𝐎𝐃𝐄𝐑🎵
+
+🎵 *Title ┆* ${title}
+
+⏱️ *Duration ┆* ${duration || 'N/A'}
+
+🔊 *Quality ┆* ${quality}
+
+🔗 *Source ┆* ${videoUrl}
+
+*💐 Reply Number Your Format*
+*╭━━━━━━━━━━━━━━━━━━➤*
+*┣━➤ 1️⃣. 📄 MP3 as Document*
+*┣━➤ 2️⃣. 🎧 MP3 as Audio*
+*┣━➤ 3️⃣. 🎙 MP3 as Voice Note*
+*╰━━━━━━━━━━━━━━━━━━➤*
+
+🧑‍💻 POWERED BY ${botName}
+  ᴄʏʙᴇʀ ᴘᴀɴᴅᴀ ᴍᴅ ᴍɪɴɪ`;
+        // send thumbnail card if available
+        const sendOpts = { quoted: botMention };
+        const media = thumb ? { image: { url: thumb }, caption } : { text: caption };
+        const resMsg = await socket.sendMessage(sender, media, sendOpts);
+        // handler waits for quoted reply from same sender
+        const handler = async (msgUpdate) => {
+            try {
+                const received = msgUpdate.messages && msgUpdate.messages[0];
+                if (!received) return;
+                const fromId = received.key.remoteJid || received.key.participant || (received.key.fromMe && sender);
+                if (fromId !== sender) return;
+                const text = received.message?.conversation || received.message?.extendedTextMessage?.text;
+                if (!text) return;
+                // ensure they quoted our card
+                const quotedId = received.message?.extendedTextMessage?.contextInfo?.stanzaId ||
+                    received.message?.extendedTextMessage?.contextInfo?.quotedMessage?.key?.id;
+                if (!quotedId || quotedId !== resMsg.key.id) return;
+                const choice = text.toString().trim().split(/\s+/)[0];
+                await socket.sendMessage(sender, { react: { text: "🎵", key: received.key } });
+                switch (choice) {
+                    case "1":
+                        await socket.sendMessage(sender, {
+                            document: { url: downloadUrl },
+                            mimetype: "audio/mpeg",
+                            fileName: filename
+                        }, { quoted: received });
+                        break;
+                    case "2":
+                        await socket.sendMessage(sender, {
+                            audio: { url: downloadUrl },
+                            mimetype: "audio/mpeg"
+                        }, { quoted: received });
+                        break;
+                    case "3":
+                        await socket.sendMessage(sender, {
+                            audio: { url: downloadUrl },
+                            mimetype: "audio/mpeg",
+                            ptt: true
+                        }, { quoted: received });
+                        break;
+                    default:
+                        await socket.sendMessage(sender, { text: "*Plz Enter Valid Famat ❌*" }, { quoted: received });
+                        return;
+                }
+                // cleanup listener after successful send
+                socket.ev.off('messages.upsert', handler);
+            } catch (err) {
+                console.error("Song handler error:", err);
+                try { socket.ev.off('messages.upsert', handler); } catch (e) {}
+            }
+        };
+        socket.ev.on('messages.upsert', handler);
+        // auto-remove handler after 60s
+        setTimeout(() => {
+            try { socket.ev.off('messages.upsert', handler); } catch (e) {}
+        }, 60 * 1000);
+        // react to original command
+        await socket.sendMessage(sender, { react: { text: '📥', key: msg.key } });
+    } catch (err) {
+        console.error('Song case error:', err);
+        await socket.sendMessage(sender, { text: "*`Error occurred while processing song request`*" }, { quoted: botMention });
+    }
+    break;
 }
 
 case 'video': {
